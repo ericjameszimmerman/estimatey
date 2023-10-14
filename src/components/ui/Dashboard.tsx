@@ -1,6 +1,7 @@
 "use client"
 
 import { trpc } from '@/app/_trpc/client'
+import { User } from '@/app/user'
 import { Ghost } from "lucide-react"
 
 const Dashboard = () => {
@@ -28,6 +29,8 @@ const Dashboard = () => {
         <p>Let&apos;s create a new Project.</p>
       </div>
     )}
+
+    <User />
   </main>
 }
 
