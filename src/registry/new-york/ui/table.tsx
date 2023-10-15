@@ -6,7 +6,7 @@ const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ className, ...props }, ref) => (
-  <div className="relative w-full max-h-[400px] overflow-y-scroll">
+  <div className="relative w-full table-container h-[calc(100vh-250px)]">
     <table
       ref={ref}
       className={cn("min-w-full caption-bottom text-sm", className)}
@@ -20,7 +20,7 @@ const TableHeader = React.forwardRef<
   HTMLTableSectionElement,
   React.HTMLAttributes<HTMLTableSectionElement>
 >(({ className, ...props }, ref) => (
-  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
+  <thead ref={ref} className={cn("[&_tr]:border-b table-header", className)} {...props} />
 ))
 TableHeader.displayName = "TableHeader"
 

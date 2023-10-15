@@ -6,6 +6,17 @@ import { Ghost } from "lucide-react"
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Button } from "@/registry/new-york/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/registry/new-york/ui/card"
+import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
 
 type Inputs = {
   name: string;
@@ -57,16 +68,20 @@ const CreateProjectForm = () => {
       }
     };
 
-  return <main className="mx-auto max-w-7xl md:p-10">
-    <div className="mt-8 flex flex-col items-start justify-between gap-4 border-b border-gray-200 pb-5 sm:flex-row sm:flow-row sm:items-center sm:gap-0">
+  return <main className="mx-auto max-w-7xl md:p-10 content-center">
+    <div className="mt-8 flex flex-col items-start border-b border-gray-200 pb-5 sm:flex-row sm:flow-row sm:items-center sm:gap-0">
       <form onSubmit={handleSubmit} className="flex flex-wrap gap-6">
-        <h1 className="mb-3 font-bold text-5xl text-gray-900">
-          Add New Project
-        </h1>
-
-        <div className="w-full flex flex-col gap-2 ">
-            <label className="text-sm">Name</label>
-            <input
+      <Card>
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl">Create a project</CardTitle>
+          <CardDescription>
+            Enter the following to create a new project
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="name">Project Name</Label>
+            <Input
               className="ring-1 ring-gray-200 p-4 rounded-sm placeholder:text-gray-200 outline-none"
               type="text"
               placeholder="Project Name"
@@ -74,8 +89,8 @@ const CreateProjectForm = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="w-full flex flex-col gap-2">
-            <label className="text-sm">Description</label>
+          <div className="grid gap-2">
+            <Label htmlFor="description">Project Description</Label>
             <textarea
               rows={3}
               className="ring-1 ring-gray-200 p-4 rounded-sm placeholder:text-gray-200 outline-none"
@@ -84,12 +99,11 @@ const CreateProjectForm = () => {
               onChange={handleChange}
             />
           </div>
-          <button
-            type="submit"
-            className="bg-gray-500 p-4 text-white w-48 rounded-md relative h-14 flex items-center justify-center"
-          >
-            Submit
-          </button>
+        </CardContent>
+        <CardFooter>
+          <Button className="w-full">Create project</Button>
+        </CardFooter>
+      </Card>
       </form>
     </div>
   </main>

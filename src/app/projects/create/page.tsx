@@ -6,7 +6,7 @@ import CreateProjectForm from "@/components/ui/CreateProjectForm";
 const CreatePage = () => {
   
   return (
-    <div>
+    <div className="grid content-center">
       <CreateProjectForm />
     </div>
   );

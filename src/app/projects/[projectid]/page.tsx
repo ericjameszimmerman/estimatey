@@ -84,7 +84,7 @@ const SingleProjectPage = async ({ params }: PageProps) => {
             <div className="grid lg:grid-cols-5">
               <Sidebar className="hidden lg:block" />
               <div className="col-span-3 lg:col-span-4 lg:border-l">
-                <div className="h-full px-4 py-6 lg:px-8">
+                <div className="h-[calc(100vh-74px)] px-4 py-6 lg:px-8">
                 <h1 className="text-3xl font-bold uppercase">
                   <span>{singleProject?.name}</span>
                 </h1>
